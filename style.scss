@@ -1,8 +1,8 @@
 // Color Palette
-$off-white: #e2e3e4;
+$off-white: #e2e3e4; // Style Reset
 
+$nav-height: 30px;
 
-// Style Reset
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +11,23 @@ $off-white: #e2e3e4;
 body {
   background-color: $off-white;
   text-align: center;
+}
+
+#main-header {
+  background-color: red;
+  position: fixed;
+  width: 100%;
+  height: $nav-height;
+  top: 0;
+  nav {
+    ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+  }
+}
+
+main {
+  margin-top: $nav-height;
 }
