@@ -1,24 +1,45 @@
+// Google Font
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
 // Color Palette
-$off-white: #e2e3e4; // Style Reset
+$off-white: #fdfdfd;
+$off-black: #4a4b4c;
 
-$nav-height: 70px;
+// Fixed Navbar Spacing
+$nav-height: 3em;
 
+// Style Reset
 * {
   margin: 0;
   padding: 0;
 }
+ul {
+  list-style-type: none;
+}
+
 
 body {
-  background-color: $off-white;
+  background-color: white;
+  color: $off-black;
+  margin: 0 auto;
   text-align: center;
+  max-width: 50em;
+  font-family: "Rubik", "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+  }
 }
 
 #main-header {
   background-color: red;
-  // position: fixed;
+  position: fixed;
   width: 100%;
   height: $nav-height;
   top: 0;
+  left: 0;
   nav {
     ul {
       display: flex;
