@@ -1,7 +1,7 @@
 // Color Palette
 $off-white: #e2e3e4; // Style Reset
 
-$nav-height: 30px;
+$nav-height: 70px;
 
 * {
   margin: 0;
@@ -15,7 +15,7 @@ body {
 
 #main-header {
   background-color: red;
-  position: fixed;
+  // position: fixed;
   width: 100%;
   height: $nav-height;
   top: 0;
@@ -24,6 +24,18 @@ body {
       display: flex;
       justify-content: space-around;
       list-style: none;
+      li {
+        height: $nav-height;
+        display: flex;
+        align-items: center;
+        a {
+          color: inherit;
+          text-decoration: inherit;
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
     }
   }
 }
