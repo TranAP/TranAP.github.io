@@ -2,13 +2,31 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
 // Color Palette
-$off-white: #fdfdfd;
-$off-black: #4a4b4c;
+$hue: 40;
+$primary-base: hsl($hue, 100%, 50%);
+$secondary-base: complement($primary-base);
+// Highlights
+$primary: mix($secondary-base, $primary-base, 11%);
+$secondary: mix($primary-base, $secondary-base, 23%);
+$primary-tint: lighten($primary, 30%);
+$primary-shade: darken($primary, 30%);
+$secondary-tint: lighten($secondary, 30%);
+$secondary-shade: darken($secondary, 30%);
+// Neutrals
+$primary-neutral: mix(complement($primary), $primary, 20%);
+$primary-light: lighten($primary-neutral, 10%);
+$primary-dark: darken($primary-neutral, 10%);
+$secondary-neutral: mix(complement($secondary), $secondary, 25%);
+$secondary-light: lighten($secondary-neutral, 10%);
+$secondary-dark: darken($secondary-neutral, 10%);
+// Black and White
+$white: lighten($primary, 47%);
+$black: darken($primary, 47%);
 
 // Fixed Navbar Spacing
 $nav-height: 3em;
 
-// Style Reset
+// Style Reset and default
 * {
   margin: 0;
   padding: 0;
@@ -16,11 +34,17 @@ $nav-height: 3em;
 ul {
   list-style-type: none;
 }
+p {
+  margin: 1em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0;
+}
 
 
 body {
-  background-color: white;
-  color: $off-black;
+  background-color: $white;
+  color: $black;
   margin: 0 auto;
   max-width: 50em;
   font-family: "Rubik", "Helvetica Neue", Helvetica, sans-serif;
@@ -29,7 +53,8 @@ body {
 }
 
 #main-header {
-  background-color: red;
+  background-color: $secondary;
+  color: $primary;
   position: fixed;
   width: 100%;
   height: $nav-height;
@@ -58,11 +83,6 @@ body {
 
 main {
   margin-top: $nav-height;
-  h2 {
-    text-align: center;
-    margin-top: 1em;
-    padding-top: 1em;
-  }
   #contact, #about {
     text-align: center;
   }
