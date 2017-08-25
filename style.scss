@@ -27,7 +27,7 @@ $black: darken($primary, 47%);
 $nav-height: 3em;
 $page-width: 50em;
 
-// Style Reset and default
+// Style Reset
 * {
   margin: 0;
   padding: 0;
@@ -35,19 +35,18 @@ $page-width: 50em;
 ul {
   list-style-type: none;
 }
-p {
-  margin: 1em 0;
-}
-h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0;
-}
-
 
 body {
   background-color: $white;
   color: $black;
   font-family: "Rubik", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
+  p {
+    margin: 1em 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+  }
 }
 
 #main-header {
@@ -118,6 +117,29 @@ main {
 
 #contact {
   text-align: center;
+  padding: 1em 0;
+  li {
+    display: inline-block;
+    padding: 1em 0;
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: $secondary;
+      padding: 1em;
+      border: 3px solid $primary-dark;
+      border-radius: 20px;
+      transition: all 0.5s;
+      &:visited {
+        color: $secondary;
+      }
+      &:hover {
+        background-color: $primary-light;
+      }
+    }
+    &:last-child {
+      display: block;
+    }
+  }
 }
 
 footer {
