@@ -20,7 +20,7 @@ $secondary-neutral: mix(complement($secondary), $secondary, 25%);
 $secondary-light: lighten($secondary-neutral, 10%);
 $secondary-dark: darken($secondary-neutral, 10%);
 // Black and White
-$white: lighten($primary, 47%);
+$white: lighten($primary, 49%);
 $black: darken($primary, 47%);
 
 // Fixed Navbar Spacing
@@ -83,7 +83,29 @@ body {
 
 main {
   margin-top: $nav-height;
+  h2 {
+    text-align: center;
+    color: $primary;
+  }
   #contact, #about {
     text-align: center;
+  }
+}
+
+#portfolio {
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: $secondary;
+    &:visited {
+      color: $secondary;
+    }
+    &:hover {
+      color: $secondary-shade;
+      text-decoration: underline;
+    }
+    &:active {
+      color: $primary-light;
+    }
   }
 }
