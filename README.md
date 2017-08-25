@@ -1,5 +1,5 @@
 # TranAP.github.io
-This is a porfolio page to display my projects and skills. It is currently a __work in progress__
+This is my portfolio page. It's currently sparse, but expect updates.
 
 ## Links
 * Website: [tranap.github.io](https://tranap.github.io./)
