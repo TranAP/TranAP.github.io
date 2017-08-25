@@ -23,8 +23,9 @@ $secondary-dark: darken($secondary-neutral, 10%);
 $white: lighten($primary, 49%);
 $black: darken($primary, 47%);
 
-// Fixed Navbar Spacing
+// Spacing Variables
 $nav-height: 3em;
+$page-width: 50em;
 
 // Style Reset and default
 * {
@@ -45,11 +46,8 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background-color: $white;
   color: $black;
-  margin: 0 auto;
-  max-width: 50em;
   font-family: "Rubik", "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
-  padding: 4em 1em;
 }
 
 #main-header {
@@ -61,6 +59,8 @@ body {
   top: 0;
   left: 0;
   nav {
+    max-width: $page-width;
+    margin: 0 auto;
     ul {
       display: flex;
       justify-content: space-around;
@@ -82,13 +82,12 @@ body {
 }
 
 main {
-  margin-top: $nav-height;
+  margin: 0 auto;
+  margin-top: $nav-height+1em;
+  max-width: $page-width;
   h2 {
     text-align: center;
     color: $primary;
-  }
-  #contact, #about {
-    text-align: center;
   }
 }
 
@@ -107,5 +106,24 @@ main {
     &:active {
       color: $primary-light;
     }
+  }
+}
+
+#about {
+  text-align: center;
+  h3 {
+    color: $secondary;
+  }
+}
+
+#contact {
+  text-align: center;
+}
+
+footer {
+  background-color: $secondary;
+  padding: 0.5em 0;
+  p {
+    margin: 0;
   }
 }
