@@ -36,14 +36,7 @@ $black: darken($primary, 47%);
 $nav-height: 3em;
 $page-width: 50em;
 
-// Mixins
-@mixin background($start: $secondary, $end: $secondary-dark) {
-  background: red;
-  background: -webkit-linear-gradient(left top, $start, $end);
-  background: -o-linear-gradient(bottom right, $start, $end);
-  background: -moz-linear-gradient(bottom right, $start, $end);
-  background: linear-gradient(to bottom right, $start, $end);
-}
+// Navbar Fix
 @mixin linkup($height: $nav-height) {
 	border-top: $height solid transparent;
 	margin-top: -$height;
@@ -64,7 +57,7 @@ body {
 }
 
 #main-header {
-  @include background;
+  background: linear-gradient(to bottom right, $secondary, $secondary-dark);
   color: $primary;
   position: fixed;
   width: 100%;
@@ -132,6 +125,7 @@ main {
 }
 
 #contact {
+  @include linkup;
   text-align: center;
   padding: 1em 0;
   li {
@@ -159,7 +153,7 @@ main {
 }
 
 footer {
-  @include background;
+  background: linear-gradient(to bottom right, $secondary, $secondary-dark);
   padding: 0.5em 0;
   p {
     margin: 0;
