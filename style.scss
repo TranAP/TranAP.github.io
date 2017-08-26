@@ -1,6 +1,15 @@
 // Google Font
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
+// Style Reset
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+
 // Color Palette
 $hue: 40;
 $primary-base: hsl($hue, 100%, 50%);
@@ -23,17 +32,22 @@ $secondary-dark: darken($secondary-neutral, 10%);
 $white: lighten($primary, 49%);
 $black: darken($primary, 47%);
 
-// Spacing Variables
+// Variables
 $nav-height: 3em;
 $page-width: 50em;
 
-// Style Reset
-* {
-  margin: 0;
-  padding: 0;
+// Mixins
+@mixin background($start: $secondary, $end: $secondary-dark) {
+  background: red;
+  background: -webkit-linear-gradient(left top, $start, $end);
+  background: -o-linear-gradient(bottom right, $start, $end);
+  background: -moz-linear-gradient(bottom right, $start, $end);
+  background: linear-gradient(to bottom right, $start, $end);
 }
-ul {
-  list-style-type: none;
+@mixin linkup($height: $nav-height) {
+	border-top: $height solid transparent;
+	margin-top: -$height;
+	background-clip: padding-box;
 }
 
 body {
@@ -50,7 +64,7 @@ body {
 }
 
 #main-header {
-  background-color: $secondary;
+  @include background;
   color: $primary;
   position: fixed;
   width: 100%;
@@ -90,7 +104,8 @@ main {
   }
 }
 
-#portfolio {
+#projects {
+  @include linkup;
   a {
     font-weight: bold;
     text-decoration: none;
@@ -109,6 +124,7 @@ main {
 }
 
 #about {
+  @include linkup;
   text-align: center;
   h3 {
     color: $secondary;
@@ -143,7 +159,7 @@ main {
 }
 
 footer {
-  background-color: $secondary;
+  @include background;
   padding: 0.5em 0;
   p {
     margin: 0;
