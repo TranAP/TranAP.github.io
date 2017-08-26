@@ -38,9 +38,9 @@ $nav-height: 3em;
 $page-width: 50em;
 
 // Navbar Fix
-@mixin linkup($height: $nav-height) {
-	border-top: $height solid transparent;
-	margin-top: -$height;
+@mixin linkup($height: 0, $spacer: $nav-height) {
+	border-top: $spacer solid transparent;
+	margin-top: $height - $spacer;
 	background-clip: padding-box;
 }
 
@@ -53,7 +53,7 @@ body {
     margin: 1em 0;
   }
   h1, h2, h3, h4, h5, h6 {
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
 }
 
@@ -91,7 +91,7 @@ body {
 
 main {
   margin: 0 auto;
-  margin-top: $nav-height+1em;
+  margin-top: $nav-height;
   max-width: $page-width;
   h2 {
     text-align: center;
@@ -100,8 +100,18 @@ main {
   }
 }
 
+#about {
+  @include linkup(1em);
+  text-align: center;
+  h3 {
+    color: $secondary;
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+  }
+}
+
 #projects {
-  @include linkup;
+  @include linkup(1em);
   a {
     font-weight: bold;
     text-decoration: none;
@@ -120,19 +130,9 @@ main {
   }
 }
 
-#about {
-  @include linkup;
-  text-align: center;
-  h3 {
-    color: $secondary;
-    font-size: 1.5em;
-  }
-}
-
 #contact {
-  @include linkup;
+  @include linkup(1em);
   text-align: center;
-  padding: 1em 0;
   li {
     display: inline-block;
     padding: 1em 0;
@@ -154,6 +154,7 @@ main {
     }
     &:last-child {
       display: block;
+      margin-top: 0.2em;
     }
   }
 }
@@ -161,6 +162,7 @@ main {
 footer {
   background: linear-gradient(to bottom right, $secondary, $secondary-dark);
   padding: 0.5em 0;
+  margin-top: 2em;
   color: $off-white;
   p {
     margin: 0 0 0 1em;
