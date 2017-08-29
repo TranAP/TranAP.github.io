@@ -18,9 +18,9 @@ $secondary-base: complement($primary-base);
 $primary: mix($secondary-base, $primary-base, 11%);
 $secondary: mix($primary-base, $secondary-base, 23%);
 $primary-tint: lighten($primary, 30%);
-$primary-shade: darken($primary, 30%);
+$primary-shade: darken($primary, 20%);
 $secondary-tint: lighten($secondary, 30%);
-$secondary-shade: darken($secondary, 30%);
+$secondary-shade: darken($secondary, 20%);
 // Neutrals
 $primary-neutral: mix(complement($primary), $primary, 20%);
 $primary-light: lighten($primary-neutral, 10%);
@@ -58,37 +58,55 @@ body {
 }
 
 #main-header {
-  background: linear-gradient(to bottom right, $secondary, $secondary-dark);
-  color: $white;
-  position: fixed;
-  width: 100%;
-  height: $nav-height;
-  top: 0;
-  left: 0;
-  nav {
+  margin-top: $nav-height+3em;
+  text-align: center;
+  h1 {
+    font-weight: 5000;
+    font-size: 7em;
+    text-transform: uppercase;
+    color: $primary;
+    margin: 0.1em 0;
+  }
+  hr {
     max-width: $page-width;
     margin: 0 auto;
-    ul {
+    background-color: red;
+    border: 0;
+    height: 4px;
+    background-image: linear-gradient(to right, $white, $secondary-dark, $white);
+  }
+}
+
+nav {
+  background: linear-gradient(to bottom right, $secondary, $secondary-dark);
+  color: $white;
+  width: 100%;
+  height: $nav-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    max-width: $page-width;
+    margin: 0 auto;
+    li {
+      height: $nav-height;
       display: flex;
-      justify-content: space-around;
-      list-style: none;
-      li {
-        height: $nav-height;
-        display: flex;
-        align-items: center;
-        a {
-          font-size: 1.2em;
-          color: inherit;
-          text-decoration: inherit;
-          transition: all 0.2s;
-          padding: 0 0.3em;
-          border-left: 3px solid transparent;
-          border-right: 3px solid transparent;
-          &:hover {
-            color: $primary-tint;
-            border-left: 3px solid $primary-neutral;
-            border-right: 3px solid $primary-neutral;
-          }
+      align-items: center;
+      a {
+        font-size: 1.2em;
+        color: inherit;
+        text-decoration: inherit;
+        transition: all 0.2s;
+        padding: 0 0.3em;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        &:hover {
+          color: $primary-tint;
+          border-left: 3px solid $primary-neutral;
+          border-right: 3px solid $primary-neutral;
         }
       }
     }
@@ -96,12 +114,11 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  margin-top: $nav-height;
+  margin: 3em auto 0;
   max-width: $page-width;
   h2 {
     text-align: center;
-    color: $primary;
+    color: $primary-shade;
     font-size: 2.5em;
   }
 }
