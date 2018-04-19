@@ -39,26 +39,35 @@ $page-width: 50em;
 
 // Navbar Fix
 @mixin linkup($height: 0, $spacer: $nav-height) {
-	border-top: $spacer solid transparent;
-	margin-top: $height - $spacer;
-	background-clip: padding-box;
+  border-top: $spacer solid transparent;
+  margin-top: $height - $spacer;
+  background-clip: padding-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: $white;
   color: $black;
-  font-family: "Rubik", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: 'Rubik', 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 1.5;
   p {
     margin: 1em 0;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0.5em 0;
   }
 }
 
 #main-header {
-  margin-top: $nav-height+3em;
+  margin-top: $nav-height + 3em;
   text-align: center;
   h1 {
     font-weight: 5000;
@@ -73,10 +82,14 @@ body {
     background-color: red;
     border: 0;
     height: 4px;
-    background-image: linear-gradient(to right, $white, $secondary-dark, $white);
+    background-image: linear-gradient(
+      to right,
+      $white,
+      $secondary-dark,
+      $white
+    );
   }
 }
-
 nav {
   background: linear-gradient(to bottom right, $secondary, $secondary-dark);
   color: $white;
@@ -112,7 +125,6 @@ nav {
     }
   }
 }
-
 main {
   margin: 3em auto 0;
   max-width: $page-width;
@@ -122,11 +134,10 @@ main {
     font-size: 2.5em;
   }
 }
-
 #about {
   @include linkup(1em);
   text-align: center;
-    font-size: 1.1em;
+  font-size: 1.1em;
   h3 {
     text-align: center;
     color: $secondary;
@@ -134,7 +145,6 @@ main {
     margin-bottom: 0.2em;
   }
 }
-
 #projects {
   @include linkup(1em);
   a {
@@ -154,7 +164,6 @@ main {
     }
   }
 }
-
 #contact {
   @include linkup(1em);
   text-align: center;
@@ -183,7 +192,6 @@ main {
     }
   }
 }
-
 footer {
   background: linear-gradient(to bottom right, $secondary, $secondary-dark);
   padding: 0.5em 0;
